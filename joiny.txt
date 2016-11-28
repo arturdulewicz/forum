@@ -1,0 +1,4 @@
+SELECT tematy.temat, tematy.data, posty.tresc
+FROM posty
+INNER JOIN tematy
+ON tematy.id_uzytkownika=posty.id_uzytkownika

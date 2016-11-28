@@ -27,7 +27,7 @@ CREATE TABLE `administratorzy` (
   `nazwa_uzytkownika` varchar(10) NOT NULL,
   `haslo` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,6 +36,7 @@ CREATE TABLE `administratorzy` (
 
 LOCK TABLES `administratorzy` WRITE;
 /*!40000 ALTER TABLE `administratorzy` DISABLE KEYS */;
+INSERT INTO `administratorzy` VALUES (1,'admin','admin');
 /*!40000 ALTER TABLE `administratorzy` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -52,7 +53,7 @@ CREATE TABLE `fora` (
   `nazwa` varchar(30) NOT NULL,
   `opis` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -61,6 +62,7 @@ CREATE TABLE `fora` (
 
 LOCK TABLES `fora` WRITE;
 /*!40000 ALTER TABLE `fora` DISABLE KEYS */;
+INSERT INTO `fora` VALUES (1,1,'Handluj z tym.','Internetowy handel.');
 /*!40000 ALTER TABLE `fora` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -75,7 +77,7 @@ CREATE TABLE `kategorie` (
   `id` tinyint(4) NOT NULL AUTO_INCREMENT,
   `nazwa` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -84,6 +86,7 @@ CREATE TABLE `kategorie` (
 
 LOCK TABLES `kategorie` WRITE;
 /*!40000 ALTER TABLE `kategorie` DISABLE KEYS */;
+INSERT INTO `kategorie` VALUES (1,'handel');
 /*!40000 ALTER TABLE `kategorie` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -102,7 +105,7 @@ CREATE TABLE `posty` (
   `temat` varchar(100) NOT NULL,
   `tresc` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -111,6 +114,7 @@ CREATE TABLE `posty` (
 
 LOCK TABLES `posty` WRITE;
 /*!40000 ALTER TABLE `posty` DISABLE KEYS */;
+INSERT INTO `posty` VALUES (1,'2015-11-16 00:04:04',1,1,'Kupie opla.','Jak w temacie.'),(2,'2015-11-16 00:04:04',1,1,'Sprzedam opla.','Jak w temacie.');
 /*!40000 ALTER TABLE `posty` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -125,7 +129,7 @@ CREATE TABLE `rangi` (
   `id` tinyint(4) NOT NULL AUTO_INCREMENT,
   `stopien` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -134,6 +138,7 @@ CREATE TABLE `rangi` (
 
 LOCK TABLES `rangi` WRITE;
 /*!40000 ALTER TABLE `rangi` DISABLE KEYS */;
+INSERT INTO `rangi` VALUES (1,'Swiezak'),(2,'Weteran');
 /*!40000 ALTER TABLE `rangi` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -151,7 +156,7 @@ CREATE TABLE `tematy` (
   `id_forum` tinyint(4) NOT NULL,
   `temat` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -160,6 +165,7 @@ CREATE TABLE `tematy` (
 
 LOCK TABLES `tematy` WRITE;
 /*!40000 ALTER TABLE `tematy` DISABLE KEYS */;
+INSERT INTO `tematy` VALUES (1,'2015-11-17 01:00:00',1,1,'Opel');
 /*!40000 ALTER TABLE `tematy` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -178,7 +184,7 @@ CREATE TABLE `uzytkownicy` (
   `lancuch_weryfikacji` varchar(20) NOT NULL,
   `aktywne` tinyint(4) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -187,6 +193,7 @@ CREATE TABLE `uzytkownicy` (
 
 LOCK TABLES `uzytkownicy` WRITE;
 /*!40000 ALTER TABLE `uzytkownicy` DISABLE KEYS */;
+INSERT INTO `uzytkownicy` VALUES (1,'admin','admin','admin@gmail.com','ddd',1);
 /*!40000 ALTER TABLE `uzytkownicy` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -199,4 +206,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-11-14 12:17:51
+-- Dump completed on 2016-11-28 15:38:25
