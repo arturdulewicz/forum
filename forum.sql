@@ -114,7 +114,7 @@ CREATE TABLE `posty` (
 
 LOCK TABLES `posty` WRITE;
 /*!40000 ALTER TABLE `posty` DISABLE KEYS */;
-INSERT INTO `posty` VALUES (1,'2015-11-16 00:04:04',1,1,'Kupie opla.','Jak w temacie.'),(2,'2015-11-16 00:04:04',1,1,'Sprzedam opla.','Jak w temacie.');
+INSERT INTO `posty` VALUES (1,'2016-11-16 00:04:04',1,1,'Kupie opla.','Jak w temacie.'),(2,'2016-11-16 00:04:04',1,1,'Sprzedam opla.','Jak w temacie.');
 /*!40000 ALTER TABLE `posty` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -165,7 +165,7 @@ CREATE TABLE `tematy` (
 
 LOCK TABLES `tematy` WRITE;
 /*!40000 ALTER TABLE `tematy` DISABLE KEYS */;
-INSERT INTO `tematy` VALUES (1,'2015-11-17 01:00:00',1,1,'Opel');
+INSERT INTO `tematy` VALUES (1,'2016-11-17 01:00:00',1,1,'Opel');
 /*!40000 ALTER TABLE `tematy` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -206,4 +206,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-11-28 15:38:25
+-- Dump completed on 2016-11-29 10:08:12
