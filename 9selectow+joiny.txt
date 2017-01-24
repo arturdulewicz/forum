@@ -1,0 +1,16 @@
+SELECT temat FROM `tematy` HAVING COUNT(*) > 1
+SELECT nazwa_uzytkownika FROM `uzytkownicy` GROUP BY id
+SELECT count(nazwa_uzytkownika) FROM `uzytkownicy`
+SELECT sum(id) FROM `uzytkownicy`
+SELECT max(id) FROM `uzytkownicy`
+SELECT min(id) FROM `uzytkownicy`
+SELECT avg(id) FROM `uzytkownicy`
+SELECT nazwa_uzytkownika,avg(id) FROM `uzytkownicy`
+Select nazwa_uzytkownika,email from uzytkownicy group by id
+SELECT round(avg(id),2) FROM uzytkownicy
+
+SELECT tematy.temat, tematy.data, posty.tresc
+FROM posty
+INNER JOIN tematy
+ON tematy.id_uzytkownika=posty.id_uzytkownika
+
