@@ -1,0 +1,22 @@
+<?php
+include("konfiguracja.php");
+	
+	$db = mysql_connect($dbhost, $dbuser, $dbpassword);
+	mysql_select_db($dbdatabase, $db);
+//wyswietlanie postow z przedziałów datowych
+
+function join($dataP,$dataK,$godzP,$godzK){
+		$sql = "SELECT wiadomosci.temat, wiadomosci.tresc, uzytkownicy.nazwa_uzytkownika
+FROM wiadomosci
+INNER JOIN uzytkownicy
+ON wiadomosci.id_uzytkownika=uzytkownicy.id;"
+
+		$result = mysql_query($sql); 
+		while($values = mysql_fetch_assoc($result)){ 
+			$num_rows = $values['tresc']; 
+			$num_rows2 = $values['data']; 
+			echo $num_rows2 ."</br>". $num_rows . "</br>";
+		}
+	}
+	
+?>

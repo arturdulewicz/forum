@@ -1,0 +1,68 @@
+<?php
+error_reporting(0);
+session_start();
+
+require("konfiguracja.php");
+require("funkcje.php");
+
+$db = mysql_connect($dbhost, $dbuser, $dbpassword);
+mysql_select_db($dbdatabase, $db);
+
+if(isset($_GET['id'])==TRUE) {
+	if(is_numeric($_GET['id']) == FALSE) {
+		$error = 1;
+	}
+	
+	if($error == 1) {
+		header("Location: " . $config_basedir);
+	}
+	else {
+		$validtopic = $_GET['id'];
+	}
+}
+else {
+	header("Location: " . $config_basedir);
+}
+
+if(isset($_SESSION['USERNAME']) == FALSE) {
+	header("Location: " . $config_basedir . "/logowanie.php?ref=reply&id=" . $validtopic);
+}
+
+if($_POST['submit']) {
+	$messagesql = "INSERT INTO wiadomosci(data, id_uzytkownika, id_tematu, temat, tresc) VALUES (NOW()
+	,". $_SESSION['USERID']
+	.",". $validtopic
+	.",'". $_POST['temat']
+	."','". $_POST['tresc']
+	."');";
+	mysql_query($messagesql);
+	header("Location: " . $config_basedir .
+	"/wyswietlanie_wiadomosci.php?id=" . $validtopic);
+}
+else {
+	require ("naglowek.php");
+?>
+
+<form action="<?php echo pf_script_with_get($_SERVER['SCRIPT_NAME']); ?>" method="post">
+ <table>
+	<tr>
+		<td>Temat</td>
+		<td><input type="text" name="temat"></td>
+	</tr>
+	<tr>
+		<td>Tresc</td>
+		<td><textarea name="tresc" rows="10" cols="50"></textarea></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><input type="submit" name="submit" value="Dodaj!"></td>
+	</tr>
+ </table>
+</form>
+
+<?php
+}
+
+require("stopka.php");
+?>
+
